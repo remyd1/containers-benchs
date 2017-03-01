@@ -1,6 +1,7 @@
 # Benchmarks with LXD on / with ubuntu
 
-1 core CPU Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz
+
+
 
 ## Same image as the local distro
 
@@ -42,7 +43,7 @@ lsb_release -a
 /usr/bin/time -o /tmp/time_simple_linpack.o /tmp/linpack_simple > /tmp/results_simple_linpack.o
 ```
 
-By the way, we can see that the process is running with a very high UID (this is normal. LXD is doing this to avoid duplicates UID with the local system). The process is saw as a standard process from the host point of vue, son of lxd (a root daemon).
+By the way, we can see that the process is running with a very high UID (this is normal. LXD is doing this to avoid duplicates UID with the local system). The process is saw as a standard process from the host point of view, son of lxd (a root daemon).
 
 ```
     root      3047  0.0  0.0  64932 11460 ?        Sl   15:25   0:00  \_ /usr/bin/lxd forkexec ubuntu64 /var/lib/lxd/containers /var/log/lxd/ubuntu64/lxc.conf -- env HOME=/root TERM=xterm USER=root PATH=/usr/local/sbin:/usr/local/bin:/usr

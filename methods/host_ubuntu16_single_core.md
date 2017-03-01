@@ -25,7 +25,7 @@ float.h is distributed with libgcc-4.8-dev, libgcc-5-dev and libstdc++-5-dev
 
 Single core computing
 
-## Download, building and a bit of methods
+## Downloading, building and a bit of methods
 
 Changing elapsed time does not change the results (tests = 1mn, 2mn, 4mn, 8mn).
 
