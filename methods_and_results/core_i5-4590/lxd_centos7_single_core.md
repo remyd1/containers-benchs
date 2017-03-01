@@ -142,10 +142,34 @@ So there is not any improvement, worst, we loose another 2%, that is to say 11% 
 
 ## sha1sum
 
-```binaries
+```bash
 sha1sum linpack_simple*
 44684923a09fabad27ca0b1f63b900f144f1038e  linpack_simple
 91773372022ad32e27e5a633b348c3e4d9f36fa6  linpack_simple_2
 0e9e2ac4a326889da7c3e335f956ead0e9c946cf  linpack_simple_gcc5.1
 0cf0b4853ff3a3cfbb0287dffc13d62be7289f52  linpack_simple_static
 ```
+
+If I download the same file I get a different sha1sum. I think something were modified...
+
+```bash
+wget https://gist.githubusercontent.com/remyd1/7711c3e6e5a12e674f6b6d773fe37472/raw/c34201cb39e956dd19ae59af1f1306f0d59f9d24/linpack_simple_timeout.c
+# gcc4.8.5
+[root@centos7 tmp]# gcc -O3 -march=native -o linpack_simple -lm linpack_simple_timeout.c
+[root@centos7 tmp]# sha1sum linpack_simple
+c1a5362a2f173cc8c4e48b9f20ebfe1a6659e19d  linpack_simple
+```
+
+After 3 runs, I get an average of 5.722 GFlops.
+
+```bash
+wget https://gist.githubusercontent.com/remyd1/7711c3e6e5a12e674f6b6d773fe37472/raw/c34201cb39e956dd19ae59af1f1306f0d59f9d24/linpack_simple_timeout.c
+# gcc5.1
+[root@centos7 tmp]# gcc -O3 -march=native -o linpack_simple -lm linpack_simple_timeout.c
+[root@centos7 tmp]# sha1sum linpack_simple_timeout_gcc5.1
+0daf0c6ad66a434e466127ee1b70fcb34d0decd3  linpack_simple_timeout_gcc5.1
+```
+
+After 3 runs, the average is 5.797 GFlops.
+
+By the way, if I remove the 'lm' option when compiling, I get similar results with an average of 5.78 GFlops.
