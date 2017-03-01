@@ -2,8 +2,8 @@
 
 Host :
   - 1 core CPU Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz
-  - kernel : 4.4.0-62-generic #83-Ubuntu SMP Wed Jan 18 14:10:15 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
-  - release : xenial Ubuntu 16.04.2 LTS
+  - kernel: `4.4.0-62-generic #83-Ubuntu SMP Wed Jan 18 14:10:15 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux`
+  - release: xenial Ubuntu 16.04.2 LTS
 
 Firstly we will create and empty image
 
@@ -83,7 +83,7 @@ Singularity.centos_linpack.img> cat time_simple_linpack.o && bash get_flops.sh r
  average:5.79928e+06
 ```
 
-Runs average : 5.701 GFlops
+Runs average: 5.701 GFlops
 
 Performances results show a decrease of 10.65% compare to runs on my host (ubuntu).
 
@@ -131,7 +131,7 @@ IncludeCmd: yes
     /usr/bin/time -o /usr/local/test/time_simple_linpack.o /usr/local/test/linpack_simple > /usr/local/test/results_simple_linpack.o
 ```
 
-Note : it does not change from a performance point of view : 5.828 GFlops for the average on 3 runs (8.7% lower than bare-metal results).
+Note: it does not change from a performance point of view: 5.828 GFlops for the average on 3 runs (8.7% lower than bare-metal results).
 
 
 ```bash
@@ -168,6 +168,6 @@ cat time_simple_linpack.o && bash get_flops.sh results_simple_linpack.o
 
 ```
 
-Runs average : 5.802 GFlops
+Runs average: 5.802 GFlops
 
 9.6% lower than bare-metal.

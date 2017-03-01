@@ -2,12 +2,12 @@
 
 Host :
   - 1 core CPU Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz
-  - kernel : 4.4.0-62-generic #83-Ubuntu SMP Wed Jan 18 14:10:15 UTC 2017 - x86_64 x86_64 x86_64 GNU/Linux
-  - release : xenial Ubuntu 16.04.2 LTS
+  - kernel: `4.4.0-62-generic #83-Ubuntu SMP Wed Jan 18 14:10:15 UTC 2017 - x86_64 x86_64 x86_64 GNU/Linux`
+  - release: xenial Ubuntu 16.04.2 LTS
 
 ## Singularity Install
 
-`singularity requirements : autoconf, gcc, make, automake, libtool`
+`singularity requirements: autoconf, gcc, make, automake, libtool`
 
 ```bash
 git clone https://github.com/singularityware/singularity.git
@@ -157,7 +157,7 @@ sudo singularity exec linpack_simple.img bash /usr/local/test/get_flops.sh /usr/
  average:6.31071e+06
 ```
 
-Runs average : 6.328 GFlops
+Runs average: 6.328 GFlops
 
 Less than 1% lower than bare-metal (0.08%).
 
@@ -231,6 +231,6 @@ bash get_flops.sh results_simple_linpack.o
 
 ```
 
-Runs average : 6.344 GFlops
+Runs average: 6.344 GFlops
 
 Less than 1% lower than bare-metal (0.06%).

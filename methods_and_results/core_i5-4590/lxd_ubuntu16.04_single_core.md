@@ -2,8 +2,8 @@
 
 Host :
   - 1 core CPU Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz
-  - kernel : 4.4.0-62-generic #83-Ubuntu SMP Wed Jan 18 14:10:15 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
-  - release : xenial Ubuntu 16.04.2 LTS
+  - kernel: `4.4.0-62-generic #83-Ubuntu SMP Wed Jan 18 14:10:15 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux`
+  - release: xenial Ubuntu 16.04.2 LTS
 
 ## Same image as the local distro
 
@@ -138,3 +138,43 @@ sha1sum linpack_simple*
 ```
 
 As you can see, I get the same sha1sum as the binary generated on the host.
+
+If I download the file I have a differents sha1sum, I will have to do the tests again:
+
+```bash
+root@ubuntu64:/tmp# sha1sum linpack_simple
+7e9f602eba17fd404ced912d0d48c80e82e7978e  linpack_simple
+
+# 1st run
+root@ubuntu64:/tmp# bash get_flops.sh results_simple_linpack.o
+min:5730335.009
+max:6530334.416
+average:6.34462e+06
+root@ubuntu64:/tmp# cat time_simple_linpack.o
+Command exited with non-zero status 181
+128.36user 1.02system 2:09.41elapsed 99%CPU (0avgtext+0avgdata 1672maxresident)k
+0inputs+8outputs (0major+146minor)pagefaults 0swaps
+
+# 2nd run
+root@ubuntu64:/tmp# bash get_flops.sh results_simple_linpack.o
+min:5766340.558
+max:6469822.395
+average:6.29084e+06
+root@ubuntu64:/tmp# cat time_simple_linpack.o
+Command exited with non-zero status 178
+129.36user 1.06system 2:10.44elapsed 99%CPU (0avgtext+0avgdata 1760maxresident)k
+0inputs+8outputs (0major+146minor)pagefaults 0swaps
+
+# 3rd run
+root@ubuntu64:/tmp# bash get_flops.sh results_simple_linpack.o
+min:5803000.480
+max:6505099.431
+average:6.32843e+06
+root@ubuntu64:/tmp# cat time_simple_linpack.o
+Command exited with non-zero status 235
+148.30user 0.80system 2:29.10elapsed 100%CPU (0avgtext+0avgdata 1604maxresident)k
+0inputs+8outputs (0major+145minor)pagefaults 0swaps
+```
+The average on these 3 runs is 6.321 Gflops
+
+I have the same results on the host with this version of the C file.

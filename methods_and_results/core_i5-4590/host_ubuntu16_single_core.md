@@ -2,7 +2,7 @@
 
 ## Local tests
 
-My CPU is the following : Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz
+My CPU is the following: Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz
 
 ```bash
 uname -a
@@ -76,7 +76,7 @@ gcc -O3 -march=native -o linpack_simple -lm linpack_simple.c
 /usr/bin/time -o time_simple_linpack.o ./linpack_simple > results_simple_linpack.o
 ```
 
-Modified version of this file could be retrieved here : https://gist.githubusercontent.com/remyd1/7711c3e6e5a12e674f6b6d773fe37472/raw/1b30a5bf88ec6098bc6a534ac7e4361abe4d3efe/linpack_simple_timeout.c
+Modified version of this file could be retrieved here: https://gist.githubusercontent.com/remyd1/7711c3e6e5a12e674f6b6d773fe37472/raw/1b30a5bf88ec6098bc6a534ac7e4361abe4d3efe/linpack_simple_timeout.c
 
 
 ## Results

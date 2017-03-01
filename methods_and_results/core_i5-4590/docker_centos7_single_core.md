@@ -1,5 +1,10 @@
 # Benchmarks on docker with a centos7 container on an ubuntu host
 
+Host :
+  - 1 core CPU Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz
+  - kernel: `4.4.0-62-generic #83-Ubuntu SMP Wed Jan 18 14:10:15 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux`
+  - release: xenial Ubuntu 16.04.2 LTS
+
 ## Local test / preparing machine
 
 `Package docker.io 1.12.3-0ubuntu4~16.04.2`
@@ -78,7 +83,7 @@ average:5.68573e+06
 
 ```
 
-Average : 5.711 GFlops
+Average: 5.711 GFlops
 
 
 ### With gcc5.1
@@ -149,7 +154,7 @@ average:5.77002e+06
 0inputs+8outputs (0major+146minor)pagefaults 0swaps
 ```
 
-With 'lm' option, the average is 5.783 GFlops, without, it is 5.746 GFlops. So the results are very close but higher than the results obtained after a gcc4.8 compilation (~1% (between 0.07 and 0.125%)).
+With 'lm' option, the average is 5.783 GFlops, without, it is 5.746 GFlops. So the results are very close but higher than the results obtained after a gcc4.8 compilation.
 
 
 ### With a static compilation on the host and after the copy on the centos docker container
@@ -215,4 +220,4 @@ remy     12413  0.0  0.0  14264  1088 pts/9    S+   14:38   0:00          |     
 
 ## Conclusion
 
-Results are similar between LXD and docker. Performance are lower thn running from the host (between 8 and 9.7%).
+Results are similar between LXD and docker. Performance are lower than running directly on the host (between 8 and 10%).
