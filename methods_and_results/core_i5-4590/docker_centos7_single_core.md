@@ -157,11 +157,11 @@ average:5.77002e+06
 With 'lm' option, the average is 5.783 GFlops, without, it is 5.746 GFlops. So the results are very close but higher than the results obtained after a gcc4.8 compilation.
 
 
-### With a static compilation on the host and after the copy on the centos docker container
+### With a static compilation on the host
 
 
 
-- On the host side :
+- On the host side:
 ```bash
 docker run -ti f4f72904eac8
 # on another term
@@ -176,7 +176,7 @@ docker ps
 docker cp linpack_simple.1 21c14287040f:/usr/local/test/linpack_simple.static
 ```
 
-- On the  container side :
+- On the  container side:
 ```bash
 # 1st run
 [root@21c14287040f test]# /usr/bin/time -o time_simple_linpack.o ./linpack_simple.static > results_simple_linpack.o ; bash get_flops.sh results_simple_linpack.o && cat time_simple_linpack.o

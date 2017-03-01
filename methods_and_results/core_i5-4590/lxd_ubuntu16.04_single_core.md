@@ -177,4 +177,4 @@ Command exited with non-zero status 235
 ```
 The average on these 3 runs is 6.321 Gflops
 
-I have the same results on the host with this version of the C file.
+I have almosr the same results on the host with this version of the C file.
