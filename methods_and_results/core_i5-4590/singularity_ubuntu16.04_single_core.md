@@ -159,7 +159,7 @@ sudo singularity exec linpack_simple.img bash /usr/local/test/get_flops.sh /usr/
 
 Runs average: 6.328 GFlops
 
-Less than 1% lower than bare-metal (0.08%).
+Less than 1% lower than bare-metal (0.8%).
 
 After a gcc upgrade from apt and a new compilation we could check that we have the same binary :
 
@@ -233,4 +233,4 @@ bash get_flops.sh results_simple_linpack.o
 
 Runs average: 6.344 GFlops
 
-Less than 1% lower than bare-metal (0.06%).
+Less than 1% lower than bare-metal (0.6%).
