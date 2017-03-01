@@ -1,0 +1,16 @@
+BootStrap: docker
+From: ubuntu:16.04
+IncludeCmd: yes
+
+%post
+    sed -i 's/main/main restricted universe/g' /etc/apt/sources.list
+    apt-get update
+    apt-get install -y bash wget build-essential gcc time libc6-dev libgcc-5-dev
+    mkdir /usr/local/test
+    cd /usr/local/test
+    wget --no-check-certificate https://gist.githubusercontent.com/remyd1/7711c3e6e5a12e674f6b6d773fe37472/raw/1b30a5bf88ec6098bc6a534ac7e4361abe4d3efe/linpack_simple_timeout.c
+    wget --no-check-certificate https://gist.githubusercontent.com/remyd1/7711c3e6e5a12e674f6b6d773fe37472/raw/1b30a5bf88ec6098bc6a534ac7e4361abe4d3efe/get_flops.sh
+    gcc -O3 -march=native -o linpack_simple -lm linpack_simple_timeout.c
+
+%runscript
+    /usr/bin/time -o /usr/local/test/time_simple_linpack.o /usr/local/test/linpack_simple > /usr/local/test/results_simple_linpack.o

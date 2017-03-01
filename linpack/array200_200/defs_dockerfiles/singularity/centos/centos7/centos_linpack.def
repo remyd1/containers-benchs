@@ -1,0 +1,11 @@
+BootStrap: yum
+OSVersion: 7
+MirrorURL: http://mirror.centos.org/centos-%{OSVERSION}/%{OSVERSION}/os/$basearch/
+Include: yum wget time gcc.x86_64 glibc-devel g++ vim
+
+%post
+    yum -y groupinstall "Development Tools"
+    mkdir /usr/local/test
+    cd /usr/local/test
+    wget --no-check-certificate https://gist.githubusercontent.com/remyd1/7711c3e6e5a12e674f6b6d773fe37472/raw/1b30a5bf88ec6098bc6a534ac7e4361abe4d3efe/linpack_simple_timeout.c
+    wget --no-check-certificate https://gist.githubusercontent.com/remyd1/7711c3e6e5a12e674f6b6d773fe37472/raw/1b30a5bf88ec6098bc6a534ac7e4361abe4d3efe/get_flops.sh
