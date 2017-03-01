@@ -1,9 +1,9 @@
 # Benchmarks with LXD on / with ubuntu
 
 Host :
-  1 core CPU Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz
-  kernel : 4.4.0-62-generic #83-Ubuntu SMP Wed Jan 18 14:10:15 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
-  release : xenial Ubuntu 16.04.2 LTS
+  - 1 core CPU Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz
+  - kernel : 4.4.0-62-generic #83-Ubuntu SMP Wed Jan 18 14:10:15 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+  - release : xenial Ubuntu 16.04.2 LTS
 
 ## Same image as the local distro
 
