@@ -157,7 +157,7 @@ average:5.77002e+06
 With 'lm' option, the average is 5.783 GFlops, without, it is 5.746 GFlops. So the results are very close but higher than the results obtained after a gcc4.8 compilation.
 
 
-### With a static compilation on the host
+### With a static compilation from the host
 
 
 

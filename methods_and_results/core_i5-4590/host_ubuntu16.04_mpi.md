@@ -35,6 +35,7 @@ sha1sum bin/Linux/xhpl
 
 # setting HPL values N / P / Q / NB
 # using http://www.clusterkit.co.th/cluster_cal.php
+# I have 16GB of memory
 
 #clearing cache
 sudo sync && echo 3 | sudo tee /proc/sys/vm/drop_caches

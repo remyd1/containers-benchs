@@ -108,7 +108,7 @@ average:5.76867e+06
 The standard deviation is lower than previously, however main results, e.g. the average is quite similar 9% lower than bare-metal.
 
 
-## Results after a static compilation on the host
+## Results after a static compilation from the host
 
 We will copy the binary created on the host to check if results are related to gcc (once again) or the dynamic libraries.
 
