@@ -1,4 +1,4 @@
-# Benchmark on the 4 nodes
+# Benchmark on the 4 cores
 
 Host :
   - 1 core CPU Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz
