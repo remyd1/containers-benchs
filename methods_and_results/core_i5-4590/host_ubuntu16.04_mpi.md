@@ -15,16 +15,19 @@ wget http://www.netlib.org/benchmark/hpl/hpl-2.2.tar.gz
 tar -xvf hpl-2.2.tar.gz
 ln -s hpl-2.2 hpl
 cd hpl
-cp setup/Make.UNKNOWN ./Make.Linux
+cd setup
+sh make_generic
+cp setup/Make.UNKNOWN ../Make.Linux
 # installing atlas lib (it contains the blas lib needed for HPL) and openmpi
 apt-get install -y libopenmpi-dev openmpi-common openmpi-bin openmpi-doc libatlas3-base libatlas-base-dev libatlas-dev libatlas-doc
+cd ..
 
-vim Make.Linux
-# modifications
-  ARCH         = Linux
-  MPdir        = /usr/lib/openmpi
-  MPinc        = /usr/lib/openmpi/include
-  LAdir        = /usr/lib/atlas-base/
+# modifications du Makefile
+sed -i "s|UNKNOWN|Linux|" Make.Linux
+sed -ri "s|MPdir.+=|MPdir        = /usr/lib/openmpi|" Make.Linux
+sed -ri "s|MPinc.+=|MPinc        = /usr/lib/openmpi/include|" Make.Linux
+sed -ri "s|LAdir.+=|LAdir        = /usr/lib/atlas-base/|" Make.Linux
+
 
 make arch=Linux clean_arch_all
 make arch=Linux
@@ -39,6 +42,7 @@ sha1sum bin/Linux/xhpl
 
 #clearing cache
 sudo sync && echo 3 | sudo tee /proc/sys/vm/drop_caches
+cd bin/Linux
 for i in {1..4}; do echo "localhost" >> nodes; done
 mpirun -np 4 -hostfile nodes ./xhpl | tee HPL.out
 ```
