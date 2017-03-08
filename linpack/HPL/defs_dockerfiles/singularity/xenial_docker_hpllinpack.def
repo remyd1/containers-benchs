@@ -3,22 +3,18 @@ From: ubuntu:16.04
 IncludeCmd: yes
 
 %post
-    sed -i 's/main/main restricted universe/g' /etc/apt/sources.list
-    apt-get update
-    apt-get install -y bash wget build-essential gcc time libc6-dev libgcc-5-dev
-    apt-get install -y libopenmpi-dev openmpi-common openmpi-bin openmpi-doc libatlas3-base libatlas-base-dev libatlas-dev libatlas-doc
-    cd /usr/local
-    wget http://www.netlib.org/benchmark/hpl/hpl-2.2.tar.gz
-    tar -xvf hpl-2.2.tar.gz
-    mkdir -p /home/remy
-    ln -s /usr/local/hpl-2.2 /home/remy/hpl
-    cd /usr/local/hpl-2.2/setup \
-    && sh make_generic
-    cp /usr/local/hpl-2.2/setup/Make.UNKNOWN /usr/local/hpl-2.2/Make.Linux
-    cd /usr/local/hpl-2.2 \
-    && sed -i "s|UNKNOWN|Linux|" Make.Linux \
-    && sed -ri "s|MPdir.+=|MPdir        = /usr/lib/openmpi|" Make.Linux \
-    && sed -ri "s|MPinc.+=|MPinc        = /usr/lib/openmpi/include|" Make.Linux \
-    && sed -ri "s|LAdir.+=|LAdir        = /usr/lib/atlas-base/|" Make.Linux \
-    && make arch=Linux clean_arch_all \
-    && make arch=Linux
+        sed -i 's/main/main restricted universe/g' /etc/apt/sources.list
+        apt-get update
+        apt-get install -y bash wget build-essential gcc time libc6-dev libgcc-5-dev
+        apt-get install -y libopenmpi-dev openmpi-common openmpi-bin openmpi-doc libatlas3-base libatlas-base-dev libatlas-dev libatlas-doc
+        cd /usr/local
+        wget http://www.netlib.org/benchmark/hpl/hpl-2.2.tar.gz
+        tar -xvf hpl-2.2.tar.gz
+        mkdir -p /home/benchmark
+        ln -s /usr/local/hpl-2.2 /home/benchmark/hpl
+        cd /usr/local/hpl-2.2
+        wget 'https://raw.githubusercontent.com/ArangoGutierrez/containers-benchs/master/linpack/HPL/defs_dockerfiles/singularity/Make.Linux' -O Make.Linux
+        sed -ri "s|$(LN_S) $(TOPdir)/Make.$(arch) Make.inc|$(LN_S) /usr/local/hpl-2.2/Make.$(arch) Make.inc|" Make.top
+
+        make arch=Linux clean_arch_all
+        make arch=Linux
