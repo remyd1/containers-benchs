@@ -66,7 +66,7 @@ cp /root/HPL.dat ./bin/Linux/
 sudo sync && echo 3 | sudo tee /proc/sys/vm/drop_caches
 cd bin/Linux
 for i in {1..4}; do echo "localhost" >> nodes; done
-mpirun -np 4 -hostfile nodes ./xhpl | tee HPL.out
+mpirun --allow-run-as-root -np 4 -hostfile nodes ./xhpl | tee HPL.out
 ```
 
 
