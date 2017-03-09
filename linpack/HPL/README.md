@@ -1,7 +1,10 @@
 Here you fill find a
 
-Dockerfile
-bootstrap singularity.def file
+[Dockerfile](https://github.com/remyd1/containers-benchs/tree/master/linpack/HPL/defs_dockerfiles/dockerfile)
+
+[bootstrap singularity.def file](https://github.com/remyd1/containers-benchs/tree/master/linpack/HPL/defs_dockerfiles/singularity)
+
+[Bash scrpyt for LXC and Bare-metal](https://github.com/ArangoGutierrez/containers-benchs/tree/master/linpack/HPL/defs_dockerfiles/LXC)
 
 With a setup to run the HPL on Docker and Singularity, For Benchmark purposes only.
 
@@ -16,3 +19,32 @@ The HPL software package requires the availibility on your system of an implemen
 
 Acknowledgements: This work was supported in part by a grant from the Department of Energy's Lawrence Livermore National Laboratory and Los Alamos National Laboratory as part of the ASCI Projects contract numbers B503962 and 12187-001-00 4R.
 
+======================================================================
+#Setup and configure the HPL.dat
+[HPL.dat tuning](http://www.netlib.org/benchmark/hpl/tuning.html)
+
+======================================================================
+ -- High Performance Computing Linpack Benchmark (HPL)                
+    HPL - 2.1 - October 26, 2012                        
+    Antoine P. Petitet                                                
+    University of Tennessee, Knoxville                                
+    Innovative Computing Laboratory                                 
+    (C) Copyright 2000-2008 All Rights Reserved      
+Blocking size (NB) recommendation
+---------------------------------
+
+Recommended blocking sizes (NB in HPL.dat) are listed below for various Intel(R) 
+architectures:
+
+Intel(R) Xeon(R) Processor X56*/E56*/E7-*/E7*/X7*                             : 256
+
+Intel(R) Xeon(R) Processor E26*/E26* v2                                       : 256
+
+Intel(R) Xeon(R) Processor E26* v3/E26* v4                                    : 192
+
+Intel(R) Core(TM) i3/5/7-6* Processor                                         : 192
+
+Intel(R) Xeon Phi(TM) Processor 72*                                           : 336
+
+Intel(R) Xeon(R) Processor supporting Intel(R) Advanced Vector Extensions 512
+         (Intel(R) AVX-512) (codename Skylake Server)                         : 384
