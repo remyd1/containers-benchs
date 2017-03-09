@@ -14,6 +14,6 @@ Then:
 
 About:
   - For every runs, please create a markdown file with bare-metal results and name it  host\_\<distro\>\_\<type\_of\_test\>.
-  - For single core tests, please use [this file](linpack/array200_200/linpack_1_core_timeout.c). It is [linpacknew.c](http://www.netlib.org/benchmark/linpackc.new) with a timeout at 2mn in a non-interactive mode.
+  - For single core tests, please use [this file](linpack/linpacknewc/array200_200/linpack_1_core_timeout.c). It is [linpacknew.c](http://www.netlib.org/benchmark/linpackc.new) with a timeout at 2mn in a non-interactive mode.
     - If you want another array size, please create a subdirectory in linpack and put the modified file you used.
   - For docker and singularity, please create a Dockerfile or a singularity definition file for bootstrap (if you do not use those supplied). For lxd, inform us with the commands you used by filling the markdown file you created before.
