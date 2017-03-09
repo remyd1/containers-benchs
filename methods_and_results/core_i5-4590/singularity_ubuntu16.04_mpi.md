@@ -25,8 +25,8 @@ IncludeCmd: yes
     cd /usr/local
     wget http://www.netlib.org/benchmark/hpl/hpl-2.2.tar.gz
     tar -xvf hpl-2.2.tar.gz
-    mkdir -p /home/remy
-    ln -s /usr/local/hpl-2.2 /home/remy/hpl
+    mkdir -p $HOME
+    ln -s /usr/local/hpl-2.2 $HOME/hpl
     cd /usr/local/hpl-2.2/setup \
     && sh make_generic
     cp /usr/local/hpl-2.2/setup/Make.UNKNOWN /usr/local/hpl-2.2/Make.Linux
@@ -50,11 +50,11 @@ sudo singularity bootstrap linpack.img xenial_docker_hpllinpack.def
 # using http://www.clusterkit.co.th/cluster_cal.php
 # I have 16GB of memory
 # root homedir is share with the container if launched with sudo
-sudo cp /homre/remy/hpl/bin/Linux/HPL.dat /root/
+sudo cp $HOME/hpl/bin/Linux/HPL.dat /root/
 sudo singularity shell -w linpack.img
 
 # within container
-cd /usr/local/hpl
+cd /usr/local/hpl-2.2
 
 # we have the same sha1sum that we have on the host side
 sha1sum bin/Linux/xhpl
