@@ -9,16 +9,15 @@ RUN tar -xvf hpl-2.2.tar.gz -C /usr/local/
 RUN mkdir -p /home/benchmark
 
 
-ADD HPLtemplate.dat /usr/local/hpl-2.2 
+ADD HPLtemplate.dat /usr/local/hpl-2.2
 
 WORKDIR /usr/local/hpl-2.2/
-RUN sed -ri "s|$(LN_S) $(TOPdir)/Make.$(arch) Make.inc|$(LN_S) /usr/local/hpl-2.2/Make.$(arch) Make.inc|" Make.top
-RUN mv HPLtemplate.dat Make.Linux 
+RUN sed -i 's|$(LN_S) $(TOPdir)/Make.$(arch) Make.inc|$(LN_S) /usr/local/hpl-2.2/Make.$(arch) Make.inc|' Make.top
+RUN mv HPLtemplate.dat Make.Linux
 
-RUN make arch=Linux clean_arch_all 
+RUN make arch=Linux clean_arch_all
 RUN make arch=Linux
 
 WORKDIR /usr/local/hpl-2.2/bin/Linux
 
 CMD bash
-
