@@ -50,11 +50,11 @@ sudo singularity bootstrap linpack.img xenial_docker_hpllinpack.def
 # using http://www.clusterkit.co.th/cluster_cal.php
 # I have 16GB of memory
 # root homedir is share with the container if launched with sudo
-sudo cp /homre/remy/hpl/bin/Linux/HPL.dat /root/
+sudo cp $HOME/hpl/bin/Linux/HPL.dat /root/
 sudo singularity shell -w linpack.img
 
 # within container
-cd /usr/local/hpl
+cd /usr/local/hpl-2.2
 
 # we have the same sha1sum that we have on the host side
 sha1sum bin/Linux/xhpl
