@@ -4,7 +4,7 @@ Here you fill find a
 
 [bootstrap singularity.def file](https://github.com/remyd1/containers-benchs/tree/master/linpack/HPL/defs_dockerfiles/singularity)
 
-[Bash scrpyt for LXC and Bare-metal](https://github.com/remyd1/containers-benchs/tree/master/linpack/HPL/defs_dockerfiles/lxc)
+[Bash scrpyt for LXC and Bare-metal](https://github.com/ArangoGutierrez/containers-benchs/tree/master/linpack/HPL/defs_dockerfiles/LXC)
 
 With a setup to run the HPL on Docker and Singularity, For Benchmark purposes only.
 
