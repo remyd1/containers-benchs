@@ -10,15 +10,15 @@ IncludeCmd: yes
     cd /usr/local
     wget http://www.netlib.org/benchmark/hpl/hpl-2.2.tar.gz
     tar -xvf hpl-2.2.tar.gz
-    mkdir -p /home/remy
-    ln -s /usr/local/hpl-2.2 /home/remy/hpl
+    mkdir -p $HOME
+    ln -s /usr/local/hpl-2.2 $HOME/hpl
     cd /usr/local/hpl-2.2/setup \
     && sh make_generic
     cp /usr/local/hpl-2.2/setup/Make.UNKNOWN /usr/local/hpl-2.2/Make.Linux
     cd /usr/local/hpl-2.2 \
     && sed -i "s|UNKNOWN|Linux|" Make.Linux \
     && sed -ri "s|MPdir.+=|MPdir        = /usr/lib/openmpi|" Make.Linux \
-    && sed -ri "s|MPinc.+=|MPinc        = /usr/lib/openmpi/include|" Make.Linux \
+    && sed -ri "s|MPinc.+=|MPinc        = -I/usr/lib/openmpi/include|" Make.Linux \
     && sed -ri "s|LAdir.+=|LAdir        = /usr/lib/atlas-base/|" Make.Linux \
     && make arch=Linux clean_arch_all \
     && make arch=Linux
