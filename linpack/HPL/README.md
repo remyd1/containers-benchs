@@ -37,9 +37,14 @@ Recommended blocking sizes (NB in HPL.dat) are listed below for various Intel(R)
 architectures:
 
 Intel(R) Xeon(R) Processor X56*/E56*/E7-*/E7*/X7*                             : 256
+
 Intel(R) Xeon(R) Processor E26*/E26* v2                                       : 256
+
 Intel(R) Xeon(R) Processor E26* v3/E26* v4                                    : 192
+
 Intel(R) Core(TM) i3/5/7-6* Processor                                         : 192
+
 Intel(R) Xeon Phi(TM) Processor 72*                                           : 336
+
 Intel(R) Xeon(R) Processor supporting Intel(R) Advanced Vector Extensions 512
          (Intel(R) AVX-512) (codename Skylake Server)                         : 384
