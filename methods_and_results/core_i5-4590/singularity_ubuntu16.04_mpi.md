@@ -25,8 +25,8 @@ IncludeCmd: yes
     cd /usr/local
     wget http://www.netlib.org/benchmark/hpl/hpl-2.2.tar.gz
     tar -xvf hpl-2.2.tar.gz
-    mkdir -p /home/remy
-    ln -s /usr/local/hpl-2.2 /home/remy/hpl
+    mkdir -p $HOME
+    ln -s /usr/local/hpl-2.2 $HOME/hpl
     cd /usr/local/hpl-2.2/setup \
     && sh make_generic
     cp /usr/local/hpl-2.2/setup/Make.UNKNOWN /usr/local/hpl-2.2/Make.Linux
