@@ -4,7 +4,7 @@ Here you fill find a
 
 [bootstrap singularity.def file](https://github.com/remyd1/containers-benchs/tree/master/linpack/HPL/defs_dockerfiles/singularity)
 
-[Bash scrpyt for LXC and Bare-metal](https://github.com/ArangoGutierrez/containers-benchs/tree/master/linpack/HPL/defs_dockerfiles/LXC)
+[Bash script for LXC and Bare-metal](https://github.com/ArangoGutierrez/containers-benchs/tree/master/linpack/HPL/defs_dockerfiles/LXC)
 
 With a setup to run the HPL on Docker and Singularity, For Benchmark purposes only.
 
@@ -33,7 +33,7 @@ Acknowledgements: This work was supported in part by a grant from the Department
 Blocking size (NB) recommendation
 ---------------------------------
 
-Recommended blocking sizes (NB in HPL.dat) are listed below for various Intel(R) 
+Recommended blocking sizes (NB in HPL.dat) are listed below for various Intel(R)
 architectures:
 
 Intel(R) Xeon(R) Processor X56*/E56*/E7-*/E7*/X7*                             : 256
