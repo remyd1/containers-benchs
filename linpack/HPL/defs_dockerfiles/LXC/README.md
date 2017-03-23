@@ -7,11 +7,13 @@ This LXC file assumes you have a working [LXC](https://linuxcontainers.org/) on 
 lxc-create -t download -n my-container
 ```
 The download template will show you a list of distributions, versions and architectures to choose from.
+
 This bash script was tested on "ubuntu", "xenial" (16.04 LTS)
 
 ```
 lxc-start -n my-container
 ```
+
 ```
 lxc-attach -n my-container
 ```

@@ -6,6 +6,7 @@ Here you fill find a
 
 [Bash script for LXC and Bare-metal](defs_dockerfiles/LXC/hpl_install.sh)
 
+
 With a setup to run the HPL on Docker and Singularity, For Benchmark purposes only.
 
 ==================================================================================
@@ -33,7 +34,8 @@ Acknowledgements: This work was supported in part by a grant from the Department
 Blocking size (NB) recommendation
 ---------------------------------
 
-Recommended blocking sizes (NB in HPL.dat) are listed below for various Intel(R)
+
+Recommended blocking sizes (NB in HPL.dat) are listed below for various Intel(R) 
 architectures:
 
 Intel(R) Xeon(R) Processor X56*/E56*/E7-*/E7*/X7*                             : 256
