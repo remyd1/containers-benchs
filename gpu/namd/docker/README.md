@@ -3,7 +3,7 @@
 
 Install nvidia-docker :
     https://github.com/NVIDIA/nvidia-docker/wiki/Installation
-    with docker-ce insteaf of docker.io ( https://docs.docker.com/engine/installation/linux/ubuntu/#install-using-the-repository )
+    with docker-ce ( https://docs.docker.com/engine/installation/linux/ubuntu/#install-using-the-repository )
 
 
 
