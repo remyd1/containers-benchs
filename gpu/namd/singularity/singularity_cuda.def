@@ -1,0 +1,16 @@
+BootStrap: docker
+From: ubuntu:16.04
+IncludeCmd: yes
+
+%post
+        sed -i 's/main/main restricted universe/g' /etc/apt/sources.list
+        apt-get update
+        apt-get install -y bash wget build-essential gcc time libc6-dev libgcc-5-dev
+        apt-get install -y libopenmpi-dev openmpi-common openmpi-bin openmpi-doc libatlas3-base libatlas-base-dev libatlas-dev libatlas-doc
+        # from https://hpc.nih.gov/apps/singularity.html#gpu
+        wget ftp://ngsisem.mbb.univ-montp2.fr/mbbteam/datadir/gpu4singularity
+        chmod 755 gpu4singularity
+        ./gpu4singularity --verbose
+        wget -O /usr/local/namd_install_with_samples.sh ftp://ngsisem.mbb.univ-montp2.fr/mbbteam/datadir/namd_install_with_samples.sh
+        #rm gpu4singularity
+        bash namd_install_with_samples.sh
