@@ -1,10 +1,11 @@
 Here you fill find a
 
-[Dockerfile](https://github.com/remyd1/containers-benchs/tree/master/linpack/HPL/defs_dockerfiles/dockerfile)
+[Dockerfile](defs_dockerfiles/dockerfile/Dockerfile_same_image)
 
-[bootstrap singularity.def file](https://github.com/remyd1/containers-benchs/tree/master/linpack/HPL/defs_dockerfiles/singularity)
+[bootstrap singularity.def file](defs_dockerfiles/singularity/xenial_docker_hpllinpack.def)
 
-[Bash scrpyt for LXC and Bare-metal](https://github.com/ArangoGutierrez/containers-benchs/tree/master/linpack/HPL/defs_dockerfiles/LXC)
+[Bash script for LXC and Bare-metal](defs_dockerfiles/LXC/hpl_install.sh)
+
 
 With a setup to run the HPL on Docker and Singularity, For Benchmark purposes only.
 
@@ -32,6 +33,7 @@ Acknowledgements: This work was supported in part by a grant from the Department
     (C) Copyright 2000-2008 All Rights Reserved      
 Blocking size (NB) recommendation
 ---------------------------------
+
 
 Recommended blocking sizes (NB in HPL.dat) are listed below for various Intel(R) 
 architectures:

@@ -5,3 +5,5 @@
 *.out
 *.img
 *.c
+data/
+methods_and_results/

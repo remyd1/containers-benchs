@@ -14,7 +14,7 @@ IncludeCmd: yes
         ln -s /usr/local/hpl-2.2 /home/benchmark/hpl
         cd /usr/local/hpl-2.2
         wget 'https://raw.githubusercontent.com/ArangoGutierrez/containers-benchs/master/linpack/HPL/defs_dockerfiles/singularity/Make.Linux' -O Make.Linux
-        sed -ri "s|$(LN_S) $(TOPdir)/Make.$(arch) Make.inc|$(LN_S) /usr/local/hpl-2.2/Make.$(arch) Make.inc|" Make.top
+        sed -i 's|$(LN_S) $(TOPdir)/Make.$(arch) Make.inc|$(LN_S) /usr/local/hpl-2.2/Make.$(arch) Make.inc|' Make.top
 
         make arch=Linux clean_arch_all
         make arch=Linux
