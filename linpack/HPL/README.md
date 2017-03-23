@@ -1,10 +1,10 @@
 Here you fill find a
 
-[Dockerfile](dockerfile/Dockerfile_same_image)
+[Dockerfile](defs_dockerfiles/dockerfile/Dockerfile_same_image)
 
-[bootstrap singularity.def file](singularity/xenial_docker_hpllinpack.def)
+[bootstrap singularity.def file](defs_dockerfiles/singularity/xenial_docker_hpllinpack.def)
 
-[Bash script for LXC and Bare-metal](LXC/hpl_install.sh)
+[Bash script for LXC and Bare-metal](defs_dockerfiles/LXC/hpl_install.sh)
 
 With a setup to run the HPL on Docker and Singularity, For Benchmark purposes only.
 
