@@ -1,6 +1,7 @@
 *~
 *.swp
 *.swo
+*.pdf
+*.out
 *.img
 *.c
-*.pdf

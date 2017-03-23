@@ -1,0 +1,17 @@
+FROM ubuntu
+MAINTAINER Eduardo Arango <carlos.arango.gutierrez@correounivalle.edu.co>
+
+# Build the basics 
+RUN apt-get update
+RUN apt-get install -y build-essential
+RUN apt-get install -y binutils wget git
+
+
+# Download and compile STREAM benchmark
+WORKDIR /home
+RUN wget 'https://raw.githubusercontent.com/jeffhammond/STREAM/master/stream.c' -O stream.c
+RUN gcc -O2 -fopenmp stream.c -o stream_benchmark && cp stream_benchmark /bin/
+
+ENTRYPOINT ["stream_benchmark"]
+
+# Done
