@@ -1,6 +1,11 @@
 # HPL-Benchmark for Docker
 Docker image for HPL-Benchmark
 
+There are 3 Dockerfiles :
+  - Dockerfile : built on a top of a Docker/OpenMPI image
+  - Dockerfile_optimized should is also built from a Docker/openMPI image with an install of OpenMPI from sources
+  - Dockerfile_simple : used to build a Docker from a Ubuntu basic image
+
 # Create image
 ```
 docker build -t hpldocker .

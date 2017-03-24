@@ -1,10 +1,10 @@
-Here you fill find a
+Here you fill find :
 
-[Dockerfile](defs_dockerfiles/dockerfile/Dockerfile_same_image)
+[Dockerfiles](defs_dockerfiles/dockerfile/README.md)
 
-[bootstrap singularity.def file](defs_dockerfiles/singularity/xenial_docker_hpllinpack.def)
+[bootstrap singularity.def files](defs_dockerfiles/singularity/README.md)
 
-[Bash script for LXC and Bare-metal](defs_dockerfiles/LXC/hpl_install.sh)
+[Bash script for LXC and Bare-metal](defs_dockerfiles/LXC/README.md)
 
 
 With a setup to run the HPL on Docker and Singularity, For Benchmark purposes only.
@@ -35,7 +35,7 @@ Blocking size (NB) recommendation
 ---------------------------------
 
 
-Recommended blocking sizes (NB in HPL.dat) are listed below for various Intel(R) 
+Recommended blocking sizes (NB in HPL.dat) are listed below for various Intel(R)
 architectures:
 
 Intel(R) Xeon(R) Processor X56*/E56*/E7-*/E7*/X7*                             : 256
