@@ -12,12 +12,12 @@ There are two bootstrap files here; One is optimized with the OpenMPI sources. T
 
 Sha1sums for the simple version :
 ```bash
-sha1sum xhpl
+sha1sum /usr/local/hpl-2.2/bin/Linux/xhpl
 d654a8727970203d1d66aafa8e3335fccd4474a1  xhpl
 ```
 Sha1sums for the optimized version :
 ```bash
-sha1sum xhpl
+sha1sum /usr/local/hpl-2.2/bin/Linux/xhpl
 56399930b86b5a6de4649480508df0a3e08737d5  xhpl
 ```
 

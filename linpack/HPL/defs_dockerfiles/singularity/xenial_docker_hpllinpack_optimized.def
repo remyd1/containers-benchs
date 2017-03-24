@@ -8,10 +8,9 @@ IncludeCmd: yes
         apt-get install -y bash wget build-essential gcc time libc6-dev libgcc-5-dev
         apt-get install -y libopenmpi-dev openmpi-common openmpi-bin openmpi-doc libatlas3-base libatlas-base-dev libatlas-dev libatlas-doc
         ##Install OpenMPI
-        mkdir -p /home/openmpi-2.0.2
-        cd /home/openmpi-2.0.2
+        cd /home
         wget 'https://www.open-mpi.org/software/ompi/v2.0/downloads/openmpi-2.0.2.tar.gz'
-        tar -xf openmpi-2.0.2.tar.gz -C /home/openmpi-2.0.2
+        tar -xf openmpi-2.0.2.tar.gz
         mkdir /home/openmpi-2.0.2/build
         cd /home/openmpi-2.0.2/build
         ../configure --prefix=/usr/local
