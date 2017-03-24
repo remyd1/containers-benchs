@@ -23,11 +23,25 @@ Once inside the container clone the repo with
 wget 'https://raw.githubusercontent.com/remyd1/containers-benchs/master/linpack/HPL/defs_dockerfiles/singularity/hpl_install.sh' -O hpl_make.sh
 ```
 
+There are two scripts here; One is optimized with the OpenMPI sources. The 'simple' version will use the openMPI packages from ubuntu.
+
+Sha1sums for the simple version :
+```bash
+sha1sum xhpl
+d654a8727970203d1d66aafa8e3335fccd4474a1  xhpl
 ```
-chmod +x hpl_make.sh
+Sha1sums for the optimized version :
+```bash
+sha1sum xhpl
+56399930b86b5a6de4649480508df0a3e08737d5  xhpl
+```
+
+
+```
+chmod +x hpl_install.sh
 ```
 ```
-./hpl_make.sh
+./hpl_install.sh
 ```
 #Setup and configure the HPL.dat
 [HPL.dat tuning](http://www.netlib.org/benchmark/hpl/tuning.html)

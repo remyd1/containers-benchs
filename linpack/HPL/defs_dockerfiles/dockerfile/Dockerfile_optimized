@@ -9,10 +9,9 @@ RUN tar -xvf hpl-2.2.tar.gz -C /usr/local/
 RUN mkdir -p /home/benchmark
 
 ##Install OpenMPI
-RUN mkdir -p $HOME
-WORKDIR $HOME
-RUN wget --no-check-certificate https://www.open-mpi.org/software/ompi/v2.0/downloads/openmpi-2.0.2.tar.gz
-RUN tar -xf openmpi-2.0.2.tar.gz
+WORKDIR /home/openmpi-2.0.2
+RUN wget https://www.open-mpi.org/software/ompi/v2.0/downloads/openmpi-2.0.2.tar.gz
+RUN tar -xf openmpi-2.0.2.tar.gz -C /home/openmpi-2.0.2
 WORKDIR $HOME/openmpi-2.0.2/build
 RUN ../configure --prefix=/usr/local
 RUN make clean
@@ -20,12 +19,13 @@ RUN make all install
 
 
 WORKDIR /usr/local/hpl-2.2/
-RUN wget --no-check-certificate https://raw.githubusercontent.com/remyd1/containers-benchs/master/linpack/HPL/defs_dockerfiles/dockerfile/HPLtemplate.dat
+RUN wget https://raw.githubusercontent.com/remyd1/containers-benchs/master/linpack/HPL/defs_dockerfiles/dockerfile/HPLtemplate.dat
 #ADD HPLtemplate.dat /usr/local/hpl-2.2
 
 RUN sed -i 's|$(LN_S) $(TOPdir)/Make.$(arch) Make.inc|$(LN_S) /usr/local/hpl-2.2/Make.$(arch) Make.inc|' Make.top
 RUN mv HPLtemplate.dat Make.Linux
 
+ENV LD_LIBRARY_PATH="/usr/local/lib"
 RUN make arch=Linux clean_arch_all
 RUN make arch=Linux
 

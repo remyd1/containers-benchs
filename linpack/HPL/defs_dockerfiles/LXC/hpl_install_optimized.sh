@@ -24,7 +24,7 @@ adduser --disabled-password --gecos "" mpirun && \
 	echo "mpirun ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 #Set OpenMPI ENV
-export LD_LIBRARY_PATH=/usr/local/lib
+export LD_LIBRARY_PATH="/usr/local/lib"
 
 ##Make HPL-Benchmark
 wget http://www.netlib.org/benchmark/hpl/hpl-2.2.tar.gz
