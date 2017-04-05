@@ -1,0 +1,40 @@
+FROM ubuntu:16.04
+
+MAINTAINER Carlos Eduardo Arango <carlos.arango.gutierrez@correounivalle.edu.co>
+
+RUN apt-get update
+RUN apt-get install -y bash wget build-essential gcc time libc6-dev libgcc-5-dev
+RUN apt-get install -y libopenmpi-dev openmpi-common openmpi-bin openmpi-doc libatlas3-base libatlas-base-dev libatlas-dev libatlas-doc
+RUN apt-get install -y openssh-server
+WORKDIR /home/bench
+RUN wget http://mvapich.cse.ohio-state.edu/download/mvapich/osu-micro-benchmarks-5.3.2.tar.gz
+RUN tar -xf osu-micro-benchmarks-5.3.2.tar.gz
+WORKDIR /home/bench/osu-micro-benchmarks-5.3.2
+RUN ./configure CC=/usr/local/bin/mpicc
+RUN make && make install
+
+# ------------------------------------------------------------
+# Set up ssh
+# ------------------------------------------------------------
+
+RUN mkdir /var/run/sshd
+RUN echo 'root:mpirun' | chpasswd
+RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+
+# SSH login fix. Otherwise user is kicked off after login
+RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+
+ENV NOTVISIBLE "in users profile"
+RUN echo "export VISIBLE=now" >> /etc/profile
+
+# ------------------------------------------------------------
+# Add an 'mpirun' user
+# ------------------------------------------------------------
+
+RUN adduser --disabled-password --gecos "" mpirun && \
+    echo "mpirun ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+ENV HOME /home/mpirun
+
+WORKDIR /home/bench
+
+CMD bash
