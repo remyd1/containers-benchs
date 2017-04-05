@@ -1,11 +1,11 @@
 #!/bin/bash
 ## Install the basics
 
-
+apt-get update
 apt-get install -y  bash wget openssh-server gcc gfortran binutils build-essential \
 	time libc6-dev libgcc-5-dev libopenmpi-dev openmpi-common \
 	openmpi-bin openmpi-doc libatlas3-base libatlas-base-dev \
-	libatlas-dev libatlas-doc
+	libatlas-dev libatlas-doc make
 
 ##Install OpenMPI
 mkdir -p $HOME
@@ -24,7 +24,7 @@ adduser --disabled-password --gecos "" mpirun && \
 	echo "mpirun ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 #Set OpenMPI ENV
-export LD_LIBRARY_PATH=/usr/local/lib
+export LD_LIBRARY_PATH="/usr/local/lib"
 
 ##Make HPL-Benchmark
 wget http://www.netlib.org/benchmark/hpl/hpl-2.2.tar.gz
