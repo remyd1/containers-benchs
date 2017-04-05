@@ -1,4 +1,4 @@
-# Docker osu benchmar
+# Docker osu benchmark
 Dockerfile image for osu benchmarks
 
 # build
