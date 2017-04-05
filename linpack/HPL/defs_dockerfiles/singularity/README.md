@@ -8,6 +8,19 @@ sudo singularity create -s 2048 /tmp/hplbenchmark.img
 ```
 #Bootstrap
 
+There are two bootstrap files here; One is optimized with the OpenMPI sources. The 'simple' version will use the openMPI packages from ubuntu.
+
+Sha1sums for the simple version :
+```bash
+sha1sum /usr/local/hpl-2.2/bin/Linux/xhpl
+d654a8727970203d1d66aafa8e3335fccd4474a1  xhpl
+```
+Sha1sums for the optimized version :
+```bash
+sha1sum /usr/local/hpl-2.2/bin/Linux/xhpl
+56399930b86b5a6de4649480508df0a3e08737d5  xhpl
+```
+
 ```
 sudo singularity bootstrap /tmp/hplbenchmark.img xenial_docker_hpllinpack.def
 ```
@@ -16,5 +29,5 @@ sudo singularity bootstrap /tmp/hplbenchmark.img xenial_docker_hpllinpack.def
 
 # Run
 ```
-mpirun -np ## singularity exec ./xhpl 
+mpirun -np ## singularity exec ./xhpl
 ```
