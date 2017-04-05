@@ -19,7 +19,7 @@ $ docker network create --driver overlay --subnet 172.17.9.0/24 uchuva-net
 > Step 3
 ```
 $ docker service create --replicas 2 \
---name test \
+--name osu_bench \
 --network uchuva-net \
 --publish 5000:22 ashael/openmpi:V2
 ```
