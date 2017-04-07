@@ -12,6 +12,7 @@ docker build -t osu_bench .
 ```
 $ docker swarm init
 ```
+Then, join swarm with another docker host
 > Step 2
 ```
 $ docker network create --driver overlay --subnet 172.17.9.0/24 uchuva-net
