@@ -8,6 +8,6 @@
 	wget http://mvapich.cse.ohio-state.edu/download/mvapich/osu-micro-benchmarks-5.3.2.tar.gz
 	tar -xf osu-micro-benchmarks-5.3.2.tar.gz
 	cd osu-micro-benchmarks-5.3.2
-	./configure CC=/usr/local/bin/mpicc CXX=/usr/local/bin/mpicxx
+	./configure CC=/usr/bin/mpicc CXX=/usr/bin/mpicxx --prefix=/usr/local/
 	make && make install
 	echo "Osu_Benchmark Build!"
